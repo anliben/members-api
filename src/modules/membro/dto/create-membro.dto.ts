@@ -7,4 +7,14 @@ export class CreateMembroDto {
   senha: string;
   @ApiProperty()
   grau: string;
+  @ApiProperty()
+  nome: string;
+  @ApiProperty()
+  telefone: string;
+  @ApiProperty()
+  cpf: string;
+  @ApiProperty()
+  email: string;
+  @ApiProperty()
+  data_nascimento: string;
 }

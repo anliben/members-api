@@ -17,6 +17,11 @@ model membro {
   id String @id @default(uuid())
   login String
   senha String
+  nome String
+  telefone String
+  cpf String
+  email String
+  data_nascimento String
   grau String
   createdAt DateTime @default(now())
 }
