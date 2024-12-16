@@ -7,7 +7,7 @@ import { PrismaService } from '../prisma/prisma.service';
 export class MembroService {
   constructor(private prisma: PrismaService) {}
 
-  async create(createMembroDto: CreateMembroDto) {
+  async create(createMembroDto: any) {
     return await this.prisma.membro.create({ data: createMembroDto });
   }
 
@@ -38,14 +38,6 @@ export class MembroService {
         id: id,
       },
       data: updateMembroDto,
-    });
-  }
-
-  async remove(id: string) {
-    return await this.prisma.membro.delete({
-      where: {
-        id: id,
-      },
     });
   }
 }

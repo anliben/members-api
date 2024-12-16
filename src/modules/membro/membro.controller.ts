@@ -15,7 +15,7 @@ export class MembroController {
     type: CreateMembroDto,
   })
   @ApiResponse({ status: 201, description: 'Usuário gravado com sucesso.' })
-  create(@Body() createMembroDto: CreateMembroDto) {
+  create(@Body() createMembroDto: any) {
     return this.membroService.create(createMembroDto);
   }
 
@@ -24,27 +24,18 @@ export class MembroController {
     description: 'Dados para gravar o novo usuário',
     type: CreateMembroDto,
   })
+
   @ApiResponse({ status: 201, description: 'Usuário gravado com sucesso.' })
   logar(@Body() logar: any) {
     return this.membroService.logar(logar);
   }
 
   @Get()
-  @ApiBody({
-    description: 'Dados para gravar o novo usuário',
-    type: [Membro],
-  })
-  @ApiResponse({ status: 201, description: 'Usuário gravado com sucesso.' })
-  findAll() {
-    return this.membroService.findAll();
+  async findAll() {
+    return await this.membroService.findAll();
   }
 
   @Get(':id')
-  @ApiBody({
-    description: 'Dados para gravar o novo usuário',
-    type: Membro,
-  })
-  @ApiResponse({ status: 201, description: 'Usuário gravado com sucesso.' })
   findOne(@Param('id') id: string) {
     return this.membroService.findOne(id);
   }
@@ -57,10 +48,5 @@ export class MembroController {
   @ApiResponse({ status: 201, description: 'Usuário gravado com sucesso.' })
   update(@Param('id') id: string, @Body() updateMembroDto: UpdateMembroDto) {
     return this.membroService.update(id, updateMembroDto);
-  }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.membroService.remove(id);
   }
 }

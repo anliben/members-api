@@ -15,13 +15,17 @@ datasource db {
 
 model membro {
   id String @id @default(uuid())
-  login String
-  senha String
-  nome String
-  telefone String
-  cpf String
-  email String
-  data_nascimento String
-  grau String
-  createdAt DateTime @default(now())
+  login String?
+  senha String?
+  nome String?
+  motem String?
+  telefone String?
+  cpf String?
+  iniciado Boolean?
+  ativo Boolean?
+  pagante Boolean?
+  email String?
+  data_nascimento String?
+  grau String?
+  createdAt DateTime? @default(now())
 }
