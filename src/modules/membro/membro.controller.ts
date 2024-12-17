@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Put, Body, Patch, Param, Delete } from '@nestjs/common';
 import { MembroService } from './membro.service';
 import { CreateMembroDto } from './dto/create-membro.dto';
 import { UpdateMembroDto } from './dto/update-membro.dto';
@@ -40,7 +40,7 @@ export class MembroController {
     return this.membroService.findOne(id);
   }
 
-  @Patch(':id')
+  @Put(':id')
   @ApiBody({
     description: 'Dados para gravar o novo usuário',
     type: UpdateMembroDto,
