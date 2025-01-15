@@ -27,5 +27,6 @@ model membro {
   email String?
   data_nascimento String?
   grau String?
+  admin Boolean?
   createdAt DateTime? @default(now())
 }
