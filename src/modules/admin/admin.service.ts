@@ -14,6 +14,8 @@ export class AdminService {
             },
         });
 
+        console.log(response)
+
         if (response) {
             return response;
         } else {
