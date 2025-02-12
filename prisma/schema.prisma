@@ -28,5 +28,6 @@ model membro {
   data_nascimento String?
   grau String?
   admin Boolean?
+  pagamento_data Int?
   createdAt DateTime? @default(now())
 }

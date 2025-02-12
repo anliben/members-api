@@ -12,6 +12,8 @@ export class CreateMembroDto {
   @ApiProperty()
   telefone: string;
   @ApiProperty()
+  pagamento_data: string;
+  @ApiProperty()
   cpf: string;
   @ApiProperty()
   email: string;
